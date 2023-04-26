@@ -1,7 +1,5 @@
 package com.nogayhusrev;
 
-import java.util.Stack;
-
 public class Main {
     public static void main(String[] args) {
 
@@ -14,6 +12,18 @@ public class Main {
         System.out.println("=================ExpressionBalanced=================");
         str = "{(1 + 2)}";
         System.out.println(str + " --------> " + new Expression().isBalanced(str));
+        System.out.println();
+
+        System.out.println("=================StackImplementation=================");
+        Stack stack = new Stack();
+        stack.push(10);
+        stack.push(20);
+        stack.push(30);
+        stack.push(40);
+        stack.pop();
+        stack.peek();
+        System.out.println(stack.isEmpty());
+        System.out.println(stack);
         System.out.println();
 
     }

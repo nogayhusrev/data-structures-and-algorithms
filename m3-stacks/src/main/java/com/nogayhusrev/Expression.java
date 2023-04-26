@@ -21,7 +21,7 @@ public class Expression {
                     return false;
 
                 var top = stack.pop();
-                if (bracketsMatch(top, c))
+                if (bracketsNotMatch(top, c))
                     return false;
             }
         }
@@ -30,9 +30,9 @@ public class Expression {
         return stack.isEmpty();
     }
 
-    private boolean bracketsMatch(char left, char right) {
+    private boolean bracketsNotMatch(char left, char right) {
 
-        return leftBrackets.indexOf(left) == rightBrackets.indexOf(right);
+        return leftBrackets.indexOf(left) != rightBrackets.indexOf(right);
     }
 
     private boolean isRightBracket(char c) {
