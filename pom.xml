@@ -12,6 +12,8 @@
         <module>m1-arrays</module>
         <module>m2-linked-lists</module>
         <module>m3-stacks</module>
+        <module>m4-queues</module>
+        <module>m0-code-with-mosh</module>
     </modules>
 
     <properties>
