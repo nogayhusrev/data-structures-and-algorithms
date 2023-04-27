@@ -49,9 +49,7 @@ public class PriorityQueue {
 
     @Override
     public String toString() {
-        return "PriorityQueue{" +
-                "items=" + Arrays.toString(items) +
-                '}';
+        return Arrays.toString(items);
     }
 
     public static void main(String[] args) {
@@ -62,6 +60,10 @@ public class PriorityQueue {
         queue.add(40);
 
         System.out.println(queue);
+
+        while (!queue.isEmpty()) {
+            queue.remove();
+        }
 
     }
 
