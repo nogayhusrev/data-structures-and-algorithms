@@ -1,5 +1,6 @@
 package com.nogayhusrev;
 
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
@@ -177,7 +178,7 @@ public class LinkedList {
             System.out.println(a.value + ", " + a.next.value);
     }
 
-    public boolean hasLoop() {
+    public boolean hasCycle() {
         if (isEmpty())
             throw new IllegalStateException();
 
@@ -193,6 +194,21 @@ public class LinkedList {
         return false;
 
 
+    }
+
+    public boolean hasCycleWithHashSet() {
+        if (isEmpty())
+            throw new IllegalStateException();
+
+        var current = first;
+        var set = new HashSet<Node>();
+
+        while (current != null) {
+            if (!set.add(current))
+                return true;
+        }
+
+        return false;
     }
 
     private class Node {

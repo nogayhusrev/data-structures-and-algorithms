@@ -15,7 +15,7 @@ public class Main {
 
 //        System.out.println(list.getKthFromTheEnd(-5));
 
-        System.out.println(list.hasLoop());
+        System.out.println(list.hasCycle());
 
         list.printMiddle();
 
