@@ -14,6 +14,7 @@
         <module>m3-stacks</module>
         <module>m4-queues</module>
         <module>m0-code-with-mosh</module>
+        <module>m5-hash-tables</module>
     </modules>
 
     <properties>
