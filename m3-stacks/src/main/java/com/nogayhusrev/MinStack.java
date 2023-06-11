@@ -1,4 +1,5 @@
 package com.nogayhusrev;
+
 import java.util.Stack;
 
 public class MinStack {
@@ -8,6 +9,27 @@ public class MinStack {
     public MinStack() {
         stack = new Stack<>();
         minStack = new Stack<>();
+    }
+
+    public static void main(String[] args) {
+        MinStack stack = new MinStack();
+        stack.push(5);
+//        stack.push(2);
+//        stack.push(-1);
+//        stack.push(-2);
+        stack.push(243);
+        stack.push(3);
+        stack.push(5);
+        stack.push(6);
+        stack.push(8);
+        stack.push(3);
+        stack.push(10);
+        stack.push(1);
+
+        System.out.println(stack.min());
+        stack.pop();
+        System.out.println(stack.min());
+
     }
 
     public void push(int value) {
@@ -40,28 +62,5 @@ public class MinStack {
         }
 
         return minStack.peek();  // return the top element of the minStack
-    }
-
-
-
-    public static void main(String[] args) {
-        MinStack stack = new MinStack();
-        stack.push(5);
-//        stack.push(2);
-//        stack.push(-1);
-//        stack.push(-2);
-        stack.push(243);
-        stack.push(3);
-        stack.push(5);
-        stack.push(6);
-        stack.push(8);
-        stack.push(3);
-        stack.push(10);
-        stack.push(1);
-
-        System.out.println(stack.min());
-        stack.pop();
-        System.out.println(stack.min());
-
     }
 }

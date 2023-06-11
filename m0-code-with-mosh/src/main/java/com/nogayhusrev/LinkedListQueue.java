@@ -3,15 +3,6 @@ package com.nogayhusrev;
 import java.util.ArrayList;
 
 public class LinkedListQueue {
-    private class Node {
-        private int value;
-        private Node next;
-
-        public Node(int value) {
-            this.value = value;
-        }
-    }
-
     private Node head;
     private Node tail;
     private int count;
@@ -80,5 +71,14 @@ public class LinkedListQueue {
         }
 
         return list.toString();
+    }
+
+    private class Node {
+        private int value;
+        private Node next;
+
+        public Node(int value) {
+            this.value = value;
+        }
     }
 }

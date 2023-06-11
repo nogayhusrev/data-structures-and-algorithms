@@ -1,7 +1,5 @@
 package nogayhusrev;
 
-import java.util.Arrays;
-
 public class Array {
 
     private int[] items;
@@ -73,7 +71,7 @@ public class Array {
     public Array intersect(Array other) {
         var intersection = new Array(count);
 
-        for (int item : items){
+        for (int item : items) {
             if (other.indexOf(item) >= 0)
                 intersection.insert(item);
         }

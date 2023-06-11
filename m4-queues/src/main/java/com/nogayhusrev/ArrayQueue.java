@@ -15,6 +15,28 @@ public class ArrayQueue {
         items = new int[capacity];
     }
 
+    public static void main(String[] args) {
+        ArrayQueue queue = new ArrayQueue(10);
+        queue.enqueue(10);
+        queue.enqueue(20);
+        queue.enqueue(30);
+        queue.enqueue(40);
+        queue.enqueue(40);
+        queue.enqueue(40);
+        queue.enqueue(40);
+
+
+        queue.dequeue();
+        queue.dequeue();
+        queue.dequeue();
+        queue.dequeue();
+        queue.enqueue(40);
+        queue.enqueue(40);
+        queue.enqueue(40);
+        queue.enqueue(40);
+        System.out.println(queue);
+    }
+
     public void enqueue(int item) {
         if (count == items.length)
             throw new IllegalStateException();
@@ -44,28 +66,5 @@ public class ArrayQueue {
     @Override
     public String toString() {
         return Arrays.toString(items);
-    }
-
-
-    public static void main(String[] args) {
-        ArrayQueue queue = new ArrayQueue(10);
-        queue.enqueue(10);
-        queue.enqueue(20);
-        queue.enqueue(30);
-        queue.enqueue(40);
-        queue.enqueue(40);
-        queue.enqueue(40);
-        queue.enqueue(40);
-
-
-        queue.dequeue();
-        queue.dequeue();
-        queue.dequeue();
-        queue.dequeue();
-        queue.enqueue(40);
-        queue.enqueue(40);
-        queue.enqueue(40);
-        queue.enqueue(40);
-        System.out.println(queue);
     }
 }

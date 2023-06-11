@@ -10,6 +10,21 @@ public class PriorityQueue {
         items = new int[capacity];
     }
 
+    public static void main(String[] args) {
+        PriorityQueue queue = new PriorityQueue(10);
+        queue.add(10);
+        queue.add(500);
+        queue.add(30);
+        queue.add(40);
+
+        System.out.println(queue);
+
+        while (!queue.isEmpty()) {
+            queue.remove();
+        }
+
+    }
+
     public void add(int item) {
         if (isFull())
             throw new IllegalStateException();
@@ -50,21 +65,6 @@ public class PriorityQueue {
     @Override
     public String toString() {
         return Arrays.toString(items);
-    }
-
-    public static void main(String[] args) {
-        PriorityQueue queue = new PriorityQueue(10);
-        queue.add(10);
-        queue.add(500);
-        queue.add(30);
-        queue.add(40);
-
-        System.out.println(queue);
-
-        while (!queue.isEmpty()) {
-            queue.remove();
-        }
-
     }
 
 }
