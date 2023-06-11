@@ -55,8 +55,7 @@ public class Array {
 
     public int indexOf(int item) {
         for (int i = 0; i < count; i++) {
-            if (items[i] == item)
-                return i;
+            if (items[i] == item) return i;
         }
 
         return -1;
@@ -65,51 +64,22 @@ public class Array {
     public int max() {
         int max = items[0];
         for (int i = 1; i < count; i++) {
-            if (max < items[i])
-                max = items[i];
+            if (max < items[i]) max = items[i];
         }
 
         return max;
     }
 
-    public int[] intersect(Array array) {
+    public Array intersect(Array other) {
+        var intersection = new Array(count);
 
-        if (array == null)
-            return null;
-
-        int[] arr1 = new int[this.count];
-        int[] arr2 = new int[array.count];
-
-        for (int i = 0; i < this.count; i++) {
-            arr1[i] = items[i];
+        for (int item : items){
+            if (other.indexOf(item) >= 0)
+                intersection.insert(item);
         }
 
-        for (int i = 0; i < array.count; i++) {
-            arr2[i] = items[i];
-        }
+        return intersection;
 
-        Arrays.sort(arr1);
-        Arrays.sort(arr2);
-        int commonSize = (this.count > array.count) ? count : array.count;
-        int[] commonItems = new int[commonSize];
-
-        int i = 0;
-        int j = 0;
-        int k = 0;
-        while (i < arr1.length && j < arr2.length) {
-            if (arr1[i] == arr2[j]) {
-                commonItems[k] = arr1[i];
-                i++;
-                j++;
-                k++;
-            } else if (arr1[i] < arr2[j]) {
-                i++;
-            } else {
-                j++;
-            }
-        }
-
-        return commonItems;
     }
 
     public void reverse() {
