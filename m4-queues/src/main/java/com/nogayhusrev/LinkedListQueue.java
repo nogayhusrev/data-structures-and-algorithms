@@ -25,13 +25,16 @@ public class LinkedListQueue {
     }
 
 
-    public void dequeue() {
+    public int dequeue() {
         if (isEmpty())
             throw new NoSuchElementException();
+        int value;
         if (first == last) {
+            value = first.value;
             first = last = null;
 
         } else {
+            value = first.value;
             var second = first.next;
             first.next = null;
             first = second;
@@ -39,6 +42,8 @@ public class LinkedListQueue {
         }
 
         size--;
+
+        return value;
     }
 
     private boolean isEmpty() {
