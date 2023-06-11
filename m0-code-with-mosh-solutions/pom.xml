@@ -9,7 +9,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>m0-code-with-mosh</artifactId>
+    <artifactId>m0-code-with-mosh-solutions</artifactId>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
