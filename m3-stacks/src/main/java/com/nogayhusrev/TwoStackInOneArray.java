@@ -15,7 +15,7 @@ public class TwoStackInOneArray {
     }
 
     public void push1(int x) {
-        if (isEmpty1()) {
+        if (isEmpty()) {
             top1++;
             arr[top1] = x;
         } else {
@@ -24,7 +24,7 @@ public class TwoStackInOneArray {
     }
 
     public void push2(int x) {
-        if (isEmpty2()) {
+        if (isEmpty()) {
             top2--;
             arr[top2] = x;
         } else {
@@ -54,21 +54,14 @@ public class TwoStackInOneArray {
         }
     }
 
-    public boolean isEmpty1() {
+    public boolean isEmpty() {
         return (top1 < top2 - 1);
     }
 
-    public boolean isEmpty2() {
-        return (top1 < top2 - 1);
-    }
-
-    public boolean isFull1() {
+    public boolean isFull() {
         return (top1 == top2 - 1);
     }
 
-    public boolean isFull2() {
-        return (top1 == top2 - 1);
-    }
 
     @Override
     public String toString() {
