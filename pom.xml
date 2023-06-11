@@ -15,6 +15,7 @@
         <module>m4-queues</module>
         <module>m0-code-with-mosh-solutions</module>
         <module>m5-hash-tables</module>
+        <module>m6-trees</module>
     </modules>
 
     <properties>
