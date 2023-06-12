@@ -9,10 +9,13 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/m0-code-with-mosh-solutions/pom.xml" />
+        <option value="$PROJECT_DIR$/m6-trees/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/m0-code-with-mosh-solutions/pom.xml" />
         <option value="$PROJECT_DIR$/m2-linked-list/pom.xml" />
       </set>
     </option>
