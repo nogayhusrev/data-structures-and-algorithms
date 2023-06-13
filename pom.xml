@@ -13,9 +13,9 @@
         <module>m2-linked-lists</module>
         <module>m3-stacks</module>
         <module>m4-queues</module>
-        <module>m0-code-with-mosh-solutions</module>
         <module>m5-hash-tables</module>
         <module>m6-trees</module>
+        <module>m7-avl-trees</module>
     </modules>
 
     <properties>
