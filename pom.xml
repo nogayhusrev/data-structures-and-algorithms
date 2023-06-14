@@ -15,6 +15,8 @@
         <module>m4-queues</module>
         <module>m5-hash-tables</module>
         <module>m6-trees</module>
+        <module>m7-avl-trees</module>
+        <module>m8-heaps</module>
     </modules>
 
     <properties>
