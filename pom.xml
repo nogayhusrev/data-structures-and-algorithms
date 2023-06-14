@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.nogayhusrev</groupId>
-    <artifactId>data-structures-and-algorithms-2</artifactId>
+    <artifactId>data-structures-and-algorithms</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
@@ -13,7 +13,6 @@
         <module>m2-linked-lists</module>
         <module>m3-stacks</module>
         <module>m4-queues</module>
-        <module>m0-code-with-mosh-solutions</module>
         <module>m5-hash-tables</module>
     </modules>
 
