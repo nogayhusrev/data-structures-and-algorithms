@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.nogayhusrev</groupId>
-    <artifactId>data-structures-and-algorithms-2</artifactId>
+    <artifactId>data-structures-and-algorithms</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
@@ -15,7 +15,6 @@
         <module>m4-queues</module>
         <module>m5-hash-tables</module>
         <module>m6-trees</module>
-        <module>m7-avl-trees</module>
     </modules>
 
     <properties>
