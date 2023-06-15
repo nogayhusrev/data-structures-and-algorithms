@@ -4,6 +4,12 @@ public class MaxHeap {
 
 
     public static void heapify(int[] array) {
+
+        for (var i = 0; i < array.length; i++)
+            heapify(array, i);
+    }
+
+    public static void optimizedHeapify(int[] array) {
         var lastParentIndex = array.length / 2 - 1;
         for (var i = lastParentIndex; i >= 0; i--)
             heapify(array, i);
