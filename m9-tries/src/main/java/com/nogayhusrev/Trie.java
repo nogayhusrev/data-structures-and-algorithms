@@ -20,55 +20,54 @@ public class Trie {
         current.isEndOfWord = true;
     }
 
-
     public boolean contains(String word) {
         if (word == null)
             return false;
 
         var current = root;
+
         for (var ch : word.toCharArray()) {
             if (!current.hasChild(ch))
                 return false;
             current = current.getChild(ch);
         }
-
         return current.isEndOfWord;
-
     }
 
-    public void traverse(){
-        traversePostOrder(root);
+    public void traverse() {
+        traverse(root);
     }
 
-    private void traversePostOrder(Node root) {
+    public void traversePreOrder() {
+        traversePreOrder(root);
+    }
+
+    private void traverse(Node root) {
 
         for (var child : root.getChildren())
-            traversePostOrder(child);
+            traverse(child);
 
-        // Post-order : Visit the root last
         System.out.println(root.value);
     }
 
     private void traversePreOrder(Node root) {
 
-        // Pre-order : Visit the root first
         System.out.println(root.value);
-
 
         for (var child : root.getChildren())
             traversePreOrder(child);
+
+
     }
 
     public void remove(String word) {
         if (word == null)
             return;
-
         remove(root, word, 0);
     }
 
     private void remove(Node root, String word, int index) {
-
-        if (index == word.length()){
+        if (index == word.length()) {
             root.isEndOfWord = false;
             return;
         }
@@ -83,12 +82,22 @@ public class Trie {
 
         if (!child.hasChildren() && !child.isEndOfWord)
             root.removeChild(ch);
-
     }
 
 
-    private class Node {
+    public void printWords() {
+        printWords(root, "");
+    }
 
+    private void printWords(Node root, String word) {
+        if (root.isEndOfWord)
+            System.out.println(word);
+
+        for (var child : root.getChildren())
+            printWords(child, word + child.value);
+    }
+
+    private class Node {
         private char value;
 
         private HashMap<Character, Node> children = new HashMap<>();
@@ -99,6 +108,10 @@ public class Trie {
             this.value = value;
         }
 
+        @Override
+        public String toString() {
+            return "value=" + value;
+        }
 
         public boolean hasChild(char ch) {
             return children.containsKey(ch);
@@ -125,3 +138,31 @@ public class Trie {
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

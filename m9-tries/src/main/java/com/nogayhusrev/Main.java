@@ -2,16 +2,23 @@ package com.nogayhusrev;
 
 public class Main {
     public static void main(String[] args) {
+        String word = "Ahmet";
+        String word1 = "Ahmetie";
         Trie trie = new Trie();
 
-        trie.insert("care");
-        trie.insert("car");
-        trie.insert("careful");
-        System.out.println("Done");
+        trie.insert(word);
+        trie.insert(word1);
 
-        trie.traverse();
+        trie.printWords();
 
-        trie.remove("careful");
-        trie.traverse();
+        trie.remove(word1);
+
+        System.out.println("======================================");
+
+        trie.printWords();
+
+
+
+
     }
 }
