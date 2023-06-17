@@ -2,20 +2,16 @@ package com.nogayhusrev;
 
 public class Main {
     public static void main(String[] args) {
-        String word = "Ahmet";
-        String word1 = "Ahmetie";
-        Trie trie = new Trie();
+        var trie = new Trie();
 
-        trie.insert(word);
-        trie.insert(word1);
+        trie.insert("care");
+        trie.insert("car");
+        trie.insert("careful");
+        trie.insert("carefully");
 
-        trie.printWords();
+        System.out.println(trie.findWords("car"));
 
-        trie.remove(word1);
-
-        System.out.println("======================================");
-
-        trie.printWords();
+        System.out.println(trie.containsRecursive("car"));
 
 
 

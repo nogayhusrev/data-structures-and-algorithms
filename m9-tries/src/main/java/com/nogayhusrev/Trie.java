@@ -1,6 +1,8 @@
 package com.nogayhusrev;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class Trie {
 
@@ -84,6 +86,38 @@ public class Trie {
             root.removeChild(ch);
     }
 
+    public List<String> findWords(String prefix) {
+        List<String> words = new ArrayList<>();
+        var lastNode = findLastNodeOf(prefix);
+        findWords(lastNode, prefix, words);
+
+        return words;
+    }
+
+    private void findWords(Node root, String prefix, List<String> words) {
+        if (root == null)
+            return;
+
+        if (root.isEndOfWord)
+            words.add(prefix);
+
+        for (var child : root.getChildren())
+            findWords(child, prefix + child.value, words);
+    }
+
+    private Node findLastNodeOf(String prefix) {
+        if (prefix == null)
+            return null;
+
+        var current = root;
+        for (var ch : prefix.toCharArray()) {
+            var child = current.getChild(ch);
+            if (child == null)
+                return null;
+            current = child;
+        }
+        return current;
+    }
 
     public void printWords() {
         printWords(root, "");
@@ -96,6 +130,132 @@ public class Trie {
         for (var child : root.getChildren())
             printWords(child, word + child.value);
     }
+
+
+    /***************** EXERCISES *****************/
+
+    /**
+     * 1-Implement the contains method recursively.
+     * Compare the iterative and recursive solutions.
+     * Solution: Trie.containsRecursive()
+     */
+
+    public boolean containsRecursive(String word) {
+        if (word == null)
+            return false;
+
+        return containsRecursive(root, word, 0);
+    }
+
+    private boolean containsRecursive(Node root, String word, int index) {
+
+        if (index == word.length())
+            return root.isEndOfWord;
+
+        if (root == null)
+            return false;
+
+        var ch = word.charAt(index);
+        var child = root.getChild(ch);
+        if (child == null)
+            return false;
+
+        return containsRecursive(child, word, index + 1);
+    }
+
+
+    /**
+     * 2- Count the number of words in a trie.
+     * Solution: Trie.countWords()
+     */
+
+    public int countWords(){
+        return countWords(root);
+    }
+
+    private int countWords(Node root) {
+
+        var total = 0;
+
+        if (root.isEndOfWord)
+            total++;
+
+        for (var child:root.getChildren())
+            total+= countWords(child);
+
+
+        return total;
+    }
+
+    /**
+     * 3- Given an array of strings, find the longest common prefix.
+     * Test your algorithm against these test cases.
+     * Input: [“card”, “care”]
+     * Output: “car”
+     * Input: [“car”, “care”]
+     * Output: “car”
+     * Input: [“car”, “dog”]
+     * Output: “”Input: [“car”]
+     * Output: “car”
+     * Solution: Trie.longestCommonPrefix()
+
+     *   We add these words to a trie and walk down
+     *   the trie. If a node has more than one child,
+     *   that's where these words deviate. Try this
+     *   with "can", "canada", "care" and "cab". You'll
+     *   see that these words deviate after "ca".
+
+     *   So, we keep walking down the tree as long as
+     *   the current node has only one child.
+
+     *   One edge cases we need to count is when two
+     *   words are in the same branch and don't deviate.
+     *   For example "can" and "canada". In this case,
+     *   we keep walking down to the end because every
+     *   node (except the last node) has only one child.
+     *   But the longest common prefix here should be
+     *   "can", not "canada". So, we should find the
+     *   shortest word in the list first. The maximum
+     *   number of characters we can include in the
+     *   prefix should be equal to the length of the
+     *   shortest word.
+     */
+
+    public static String longestCommonPrefix(String[] words) {
+        if (words == null)
+            return "";
+
+        var trie = new Trie();
+        for (var word : words)
+            trie.insert(word);
+
+        var prefix = new StringBuffer();
+        var maxChars = getShortest(words).length();
+        var current = trie.root;
+        while (prefix.length() < maxChars) {
+            var children = current.getChildren();
+            if (children.length != 1)
+                break;
+            current = children[0];
+            prefix.append(current.value);
+        }
+
+        return prefix.toString();
+    }
+
+    private static String getShortest(String[] words) {
+        if (words == null || words.length == 0)
+            return "";
+
+        var shortest = words[0];
+        for (var i = 1; i < words.length; i++) {
+            if (words[i].length() < shortest.length())
+                shortest = words[i];
+        }
+
+        return shortest;
+    }
+
 
     private class Node {
         private char value;
