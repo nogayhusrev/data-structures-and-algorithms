@@ -1,6 +1,6 @@
 package com.nogayhusrev;
 
-public class MaxHeap {
+public class Heapify {
 
 
     public static void heapify(int[] array) {
@@ -18,6 +18,16 @@ public class MaxHeap {
     private static void heapify(int[] array, int index) {
         var largerIndex = index;
 
+        largerIndex = getLargerIndex(array, index, largerIndex);
+
+        if (index == largerIndex)
+            return;
+
+        swap(array, index, largerIndex);
+        heapify(array, largerIndex);
+    }
+
+    private static int getLargerIndex(int[] array, int index, int largerIndex) {
         var leftIndex = index * 2 + 1;
         if (leftIndex < array.length &&
                 array[leftIndex] > array[largerIndex])
@@ -27,12 +37,7 @@ public class MaxHeap {
         if (rightIndex < array.length &&
                 array[rightIndex] > array[largerIndex])
             largerIndex = rightIndex;
-
-        if (index == largerIndex)
-            return;
-
-        swap(array, index, largerIndex);
-        heapify(array, largerIndex);
+        return largerIndex;
     }
 
     private static void swap(int[] array, int first, int second) {

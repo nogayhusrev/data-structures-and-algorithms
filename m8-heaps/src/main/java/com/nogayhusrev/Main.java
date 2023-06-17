@@ -29,12 +29,12 @@ public class Main {
         /*=============== HEAPIFY ===============*/
         int[] numbers1 = {5, 3, 8, 4, 1, 2};
 
-        MaxHeap.heapify(numbers1);
+        Heapify.heapify(numbers1);
         System.out.println(Arrays.toString(numbers1));
         System.out.println("=========================");
 
         int[] numbers2 = {5, 3, 8, 4, 1, 2};
-        MaxHeap.optimizedHeapify(numbers2);
+        Heapify.optimizedHeapify(numbers2);
         System.out.println(Arrays.toString(numbers2));
 
 

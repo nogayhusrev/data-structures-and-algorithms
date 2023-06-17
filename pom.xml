@@ -17,6 +17,7 @@
         <module>m6-trees</module>
         <module>m7-avl-trees</module>
         <module>m8-heaps</module>
+        <module>m9-tries</module>
     </modules>
 
     <properties>
