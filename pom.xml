@@ -19,6 +19,7 @@
         <module>m8-heaps</module>
         <module>m9-tries</module>
         <module>m10-graphs</module>
+        <module>m11-undirected-graphs</module>
     </modules>
 
     <properties>
