@@ -18,6 +18,7 @@
         <module>m7-avl-trees</module>
         <module>m8-heaps</module>
         <module>m9-tries</module>
+        <module>m10-graphs</module>
     </modules>
 
     <properties>
