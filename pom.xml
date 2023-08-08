@@ -22,6 +22,7 @@
         <module>m11-undirected-graphs</module>
         <module>m12-sorting-algorithms</module>
         <module>m13-searching-algorithms</module>
+        <module>m14-string-algorithms</module>
     </modules>
 
     <properties>
