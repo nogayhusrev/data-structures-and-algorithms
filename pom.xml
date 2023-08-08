@@ -20,6 +20,7 @@
         <module>m9-tries</module>
         <module>m10-graphs</module>
         <module>m11-undirected-graphs</module>
+        <module>m12-sorting-algorithms</module>
     </modules>
 
     <properties>
