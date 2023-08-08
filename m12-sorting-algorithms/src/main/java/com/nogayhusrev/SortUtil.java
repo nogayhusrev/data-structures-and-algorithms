@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class SortingUtil {
+public class SortUtil {
 
 
     /******************* Bubble Sort ********************/
-    public void bubbleSort(int[] array) {
+    public static void bubbleSort(int[] array) {
         boolean isSorted;
         for (var i = 0; i < array.length; i++) {
             isSorted = true;
@@ -23,7 +23,7 @@ public class SortingUtil {
     }
 
     /******************* Selection Sort ********************/
-    public void selectionSort(int[] array) {
+    public static void selectionSort(int[] array) {
         for (var i = 0; i < array.length; i++) {
             var minIndex = i;
             for (var j = i; j < array.length; j++)
@@ -34,7 +34,7 @@ public class SortingUtil {
     }
 
     /******************* Insertion Sort ********************/
-    public void insertionSort(int[] array) {
+    public static void insertionSort(int[] array) {
         for (var i = 1; i < array.length; i++) {
             var current = array[i];
             var j = i - 1;
@@ -47,7 +47,7 @@ public class SortingUtil {
     }
 
     /******************* Merge Sort ********************/
-    public void mergeSort(int[] array) {
+    public static void mergeSort(int[] array) {
         if (array.length < 2)
             return;
 
@@ -67,7 +67,7 @@ public class SortingUtil {
         merge(left, right, array);
     }
 
-    private void merge(int[] left, int[] right, int[] result) {
+    private static void merge(int[] left, int[] right, int[] result) {
         int i = 0, j = 0, k = 0;
 
         while (i < left.length && j < right.length) {
@@ -85,11 +85,11 @@ public class SortingUtil {
     }
 
     /******************* Quick Sort ********************/
-    public void quickSort(int[] array) {
+    public static void quickSort(int[] array) {
         quickSort(array, 0, array.length - 1);
     }
 
-    private void quickSort(int[] array, int start, int end) {
+    private static void quickSort(int[] array, int start, int end) {
         if (start >= end)
             return;
 
@@ -99,7 +99,7 @@ public class SortingUtil {
         quickSort(array, boundary + 1, end);
     }
 
-    private int partition(int[] array, int start, int end) {
+    private static int partition(int[] array, int start, int end) {
         var pivot = array[end];
         var boundary = start - 1;
         for (var i = start; i <= end; i++)
@@ -110,7 +110,7 @@ public class SortingUtil {
     }
 
     /******************* Counting Sort ********************/
-    public void sort(int[] array, int max) {
+    public static void sort(int[] array, int max) {
         int[] counts = new int[max + 1];
         for (var item : array)
             counts[item]++;
@@ -122,7 +122,7 @@ public class SortingUtil {
     }
 
     /******************* Bucket Sort ********************/
-    public void bucketSort(int[] array, int numberOfBuckets) {
+    public static void bucketSort(int[] array, int numberOfBuckets) {
         var i = 0;
         for (var bucket : createBuckets(array, numberOfBuckets)) {
             Collections.sort(bucket);
@@ -131,7 +131,7 @@ public class SortingUtil {
         }
     }
 
-    private List<List<Integer>> createBuckets(int[] array, int numberOfBuckets) {
+    private static List<List<Integer>> createBuckets(int[] array, int numberOfBuckets) {
         List<List<Integer>> buckets = new ArrayList<>();
         for (var i = 0; i < numberOfBuckets; i++)
             buckets.add(new ArrayList<>());
@@ -143,7 +143,7 @@ public class SortingUtil {
     }
 
 
-    private void swap(int[] array, int index1, int index2) {
+    private static void swap(int[] array, int index1, int index2) {
         var temp = array[index1];
         array[index1] = array[index2];
         array[index2] = temp;
