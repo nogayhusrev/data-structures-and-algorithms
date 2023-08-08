@@ -5,6 +5,10 @@
     <file url="file://$PROJECT_DIR$/m0-code-with-mosh-solutions/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/m1-arrays/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/m1-arrays/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/m10-graphs/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/m10-graphs/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/m11-undirected-graphs/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/m11-undirected-graphs/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/m2-linked-list/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/m2-linked-list/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/m2-linked-lists/src/main/java" charset="UTF-8" />
@@ -19,6 +23,10 @@
     <file url="file://$PROJECT_DIR$/m6-trees/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/m7-avl-trees/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/m7-avl-trees/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/m8-heaps/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/m8-heaps/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/m9-tries/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/m9-tries/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
   </component>
